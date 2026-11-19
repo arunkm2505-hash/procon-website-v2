@@ -84,7 +84,7 @@ svg{width:1em;height:1em;flex-shrink:0;display:inline-block;vertical-align:middl
 ========================================================= */
 .navbar{
   position:fixed; top:0; left:0; right:0; z-index:1000;
-  height:84px; background:rgba(255,255,255,.82);
+  height:120px; background:rgba(255,255,255,.82);
   -webkit-backdrop-filter:saturate(160%) blur(14px); backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid var(--line-light);
 }
@@ -95,7 +95,7 @@ svg{width:1em;height:1em;flex-shrink:0;display:inline-block;vertical-align:middl
 }
 .brand{display:flex;align-items:center}
 .brand__chip{display:flex; align-items:center}
-.brand__chip img{height:70px;width:auto;display:block}
+.brand__chip img{height: 124px;width: 130px;display:block}
 
 .nav-pills{
   position:relative; display:flex; align-items:center; gap:1px;
@@ -622,7 +622,26 @@ p,li{text-wrap:pretty}
 .footer__top{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:52px; border-bottom:1px solid var(--line-light)}
 @media (max-width:900px){ .footer__top{grid-template-columns:1fr 1fr; row-gap:36px} }
 @media (max-width:560px){ .footer__top{grid-template-columns:1fr} }
-.footer__brand img{height:78px}
+
+/* =========================================================
+   CLIENT LOGO SECTION
+========================================================= */
+.client-section{padding-block:64px}
+.client-logo-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:center}
+.client-logo-card{height:150px;border:1px solid var(--line-light);border-radius:var(--radius-md);background:#fff;display:flex;align-items:center;justify-content:center;padding:24px;box-shadow:var(--shadow-sm)}
+.client-logo-card img{max-width:200px;width:100%;max-height:110px;height:auto;object-fit:contain}
+.client-logo-text{text-align:center;color:var(--tx-1);font-size:1.45rem;font-weight:800;letter-spacing:.02em}
+.client-logo-text small{display:block;margin-top:6px;font-size:.65rem;letter-spacing:.18em;color:var(--gold-600)}
+@media (max-width:640px){.client-logo-track{grid-template-columns:1fr}.client-logo-card{height:130px}}
+.client-logo-track.is-carousel{display:block;overflow:hidden}
+.client-logo-viewport{overflow:hidden;width:100%}
+.client-logo-strip{display:flex;width:max-content;gap:24px;animation:client-logo-scroll 24s linear infinite}
+.client-logo-strip .client-logo-card{width:220px;flex:0 0 220px}
+@keyframes client-logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.client-logo-strip{animation:none}}
+
+
+.footer__brand img{height: 124px;width: 130px}
 .footer__brand p{margin-top:18px; font-size:.9rem; line-height:1.7; max-width:280px; color:var(--tx-3)}
 .footer h4{color:var(--tx-1); font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; margin-bottom:20px}
 .footer__links{display:flex; flex-direction:column; gap:12px}

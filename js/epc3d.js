@@ -416,7 +416,7 @@ function buildLayers(){
   };
   const parts = {
     civil: ['Layer 01 · civil', 'Foundations and floor slab', 'Engineered by our own civil team for durability and constructability.'],
-    steel: ['Layer 02 · structural steel', 'Primary steel frame', 'Designed and fabricated within the Royal Fab Group ecosystem.'],
+    steel: ['Layer 02 · structural steel', 'Primary steel frame', 'Designed and fabricated within the  ecosystem.'],
     comp: ['Layer 03 · composite', 'Composite mezzanine', 'Steel and concrete engineered to act as one system.'],
     mep: ['Layer 04 · MEP', 'Building services', 'Coordinated with the structure before anything reaches site.'],
     env: ['Layer 05 · envelope', 'Roof and cladding', 'PEB envelope detailed with the frame it sits on.'],
@@ -506,7 +506,7 @@ function buildLocator(){
   };
   const parts = {
     city: ['Puducherry', 'City grid', 'Our head office is a short drive from the East Coast Road.'],
-    office: ['Head office', 'Procon Infra LLP', 'No. 252, Ananda Ranga Pillai Nagar, Kamaraj Salai, Puducherry 605008. Click to view the map.'],
+    office: ['Head office', 'Procon Infra LLP', 'Head Office: Ozone Premia, Door No. 39 (23), 7th Floor, Dr. Radhakrishnan Salai, Mylapore, Chennai – 600004<br>Registered Office: No. 8, Old No. 252, Anandarangapillai Nagar, Kamaraj Salai, Puducherry – 605008. Click to view the map.'],
     coast: ['Coastline', 'Bay of Bengal', 'Puducherry sits on the Coromandel coast.']
   };
   // deterministic pseudo random so the city looks the same on every visit

@@ -177,15 +177,39 @@
       onScrollFrame();
     }
 
-    /* ---------- contact form (static demo) ---------- */
+    /* ---------- client logo carousel switch ---------- */
+    document.querySelectorAll("[data-client-carousel]").forEach(function(track){
+      var logos = track.querySelectorAll(".client-logo-card");
+      var shouldCarousel = track.dataset.clientCarousel === "carousel" || logos.length > 6;
+      if(shouldCarousel){
+        track.classList.add("is-carousel");
+        track.setAttribute("role", "list");
+        track.innerHTML = '<div class="client-logo-viewport"><div class="client-logo-strip">' + track.innerHTML + '</div></div>';
+        var strip = track.querySelector(".client-logo-strip");
+        Array.from(logos).forEach(function(logo){ strip.appendChild(logo.cloneNode(true)); });
+      }
+    });
+
+    /* ---------- contact form ---------- */
     var form = document.querySelector("#contact-form");
     if(form){
       form.addEventListener("submit", function(e){
         e.preventDefault();
+        var data = new FormData(form);
+        var subject = "Website project enquiry - " + (data.get("company") || data.get("name") || "Procon");
+        var body = [
+          "Name: " + data.get("name"),
+          "Company: " + (data.get("company") || "-"),
+          "Email: " + data.get("email"),
+          "Phone: " + (data.get("phone") || "-"),
+          "Capability: " + data.get("service"),
+          "",
+          "Project details:",
+          data.get("message")
+        ].join("\n");
+        window.location.href = "mailto:sales@proconwow.in?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         var success = document.querySelector("#form-success");
-        if(success){ success.classList.add("show"); }
-        form.reset();
-        if(success){ success.scrollIntoView({behavior:"smooth", block:"center"}); }
+        if(success){ success.classList.add("show"); success.scrollIntoView({behavior:"smooth", block:"center"}); }
       });
     }
 
